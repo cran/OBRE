@@ -1,0 +1,22 @@
+#' Second part numerator for nvA
+#'
+#' Function computing second part numerator for OBRE numeric vector nvA evaluation.
+#' @keywords internal
+#'
+#' @param nvData The vector of data.
+#' @param nTheta1 The first parameter.
+#' @param nTheta2 The second parameter.
+#' @param lDensityExpr List of symbolic expressions of density, cumulative and derivatives.
+#' @param nCParOBRE OBRE c parameter.
+#' @param matA Matrix A.
+#' @param nvA Vector a.
+#'
+
+OBREnvANum2 = function(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA) {
+
+  nvNum2 = eval(expr = lDensityExpr$eDerivDensityFunTheta[2]) *
+    OBREWeightsFun(nvData = nvData, nTheta1 = nTheta1, nTheta2 = nTheta2, lDensityExpr = lDensityExpr,
+                   nCParOBRE = nCParOBRE, matA = matA, nvA = nvA)
+  nvNum2[is.na(nvNum2)] = 0
+  return(nvNum2)
+}
