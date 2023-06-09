@@ -1,7 +1,6 @@
 #' Element [1, 1] of matrix M.
 #'
 #' Function computing element [1, 1] of matrix M, for the computation of asymptotic covariance matrix V.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

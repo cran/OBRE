@@ -3,6 +3,7 @@
 #' Function containing expressions of density and cumulative functions, plus the first and second derivatives.
 #'
 #' @importFrom stats D
+#' @importFrom methods is
 #' @param strDistribution Distribution input between "normal" (Normal distribution), "logNormal" (logNormal distribution),
 #' "weibull" (Weibull distribution), "logLogistic" (logLogistic distribution), "gpd2" (Generalized Pareto
 #' Distribution with two parameters) or "custom" if the distribution is written by the user.
@@ -25,7 +26,7 @@ densityExpressions = function(strDistribution = "normal", eDensityFun = NA) {
 
 # Preliminary controls on the distribution name ####
   if (strDistribution == "custom") {
-    if (class(eDensityFun) != "expression") {
+    if (!is(eDensityFun, "expression")) {
       cat("The input is not an expression object.")
       return("Input error.")
     } else {

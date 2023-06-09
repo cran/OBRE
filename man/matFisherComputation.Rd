@@ -19,5 +19,3 @@ The Fisher information matrix.
 \description{
 Function calculating the Fisher information matrix.
 }
-\keyword{internal}
-

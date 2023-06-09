@@ -4,10 +4,12 @@
 \alias{plot.OBREresult}
 \title{Function that plot an OBREresult object.}
 \usage{
-\method{plot}{OBREresult}(x)
+\method{plot}{OBREresult}(x, ...)
 }
 \arguments{
 \item{x}{The OBREresult object (output of OBRE function) that has to be plotted.}
+
+\item{...}{Added argument for consistency with the plot generic function.}
 }
 \value{
 A graphical representation of an OBREresult obect. The plot is composed by four plots: the value of input data in logaritmic scale, the values of score function evaluated in the input data, the OBRE weights, the values of OBRE components.
@@ -16,13 +18,12 @@ A graphical representation of an OBREresult obect. The plot is composed by four 
 The function computes the plot of the OBRE computation
 }
 \examples{
-\donttest{# Generates the Normal distribution input for OBRE
+\donttest{try({# Generates the Normal distribution input for OBRE
 distrForOBRE <- densityExpressions(strDistribution = "normal")
 # Generates input data
 simData = c(rnorm(100, 12, 1), rnorm(10, 10, 10))
 # Estimates OBREresult object
 estOBRE = OBRE(nvData = simData, strDistribution = "normal", nCParOBRE = 3)
-plot(estOBRE)}
+plot(estOBRE)})}
 
 }
-

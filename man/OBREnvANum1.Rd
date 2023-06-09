@@ -24,5 +24,3 @@ OBREnvANum1(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA)
 \description{
 Function computing first part numerator for OBRE numeric vector nvA evaluation.
 }
-\keyword{internal}
-

@@ -3,6 +3,7 @@
 #' Function for obtaining the Optimal B-Robust Estimates starting by a vector of data and a
 #' two parameters distribution.
 #'
+#' @importFrom methods is
 #' @param nvData The vector of data.
 #' @param strDistribution The distribution name between "normal" (Normal distribution), "logNormal" (logNormal distribution),
 #' "weibull" (Weibull distribution), "logLogistic" (logLogistic distribution), "gpd2" (Generalized Pareto
@@ -26,7 +27,7 @@
 #' # Using the densityExpressions function for initialize the distribution
 #' distrForOBRE <- densityExpressions(strDistribution = "normal")
 #' simData = c(rnorm(1000, 12, 2),200,150)
-#' \donttest{estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
+#' \donttest{try({estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
 #' # Launching the generation of the density expression directly from OBRE
 #' simData = c(rnorm(1000, 12, 2),200,150)
 #' estOBRE <- OBRE(nvData = simData, strDistribution = "normal", nCParOBRE = 3)
@@ -34,7 +35,7 @@
 #' simData = c(rnorm(1000, 12, 2),200,150)
 #' estOBRE <- OBRE(nvData = simData, strDistribution = "custom", nCParOBRE = 3,
 #' eDensityFun = expression((exp( -((nvData - nTheta1)^2) / (2 * nTheta2^2)) /
-#' (sqrt(2 * pi) * nTheta2))))}
+#' (sqrt(2 * pi) * nTheta2))))})}
 #'
 #' @references Bellio, R. (2007). Algorithms for bounded-influence estimation. Comput. Stat. Data Anal. 51, 2531-2541.
 #' @references Hampel F (1968). Contributions to the theory of robust estimation. University of California.
@@ -53,7 +54,7 @@ OBRE = function(nvData, strDistribution, nCParOBRE, dfParOBRE = data.frame(nEta 
 # STEP 1: initialize starting values ####
   # Calculate the A matrix from initial matrix matFisher
   # starting matrix A
-  if(class(strDistribution)=="OBREdist"){
+  if(is(strDistribution, "OBREdist")){
     lDensityExpr =  strDistribution
   }else{
     lDensityExpr = densityExpressions(strDistribution = strDistribution, eDensityFun = eDensityFun)
@@ -68,7 +69,7 @@ OBRE = function(nvData, strDistribution, nCParOBRE, dfParOBRE = data.frame(nEta 
   invFisher = try(solve(matFisherMLE), silent = TRUE)
   eInvFisher = try(eigen(invFisher), silent = TRUE)
   # check on matrix singularity
-  if(class(invFisher) == "try-error") {
+  if(is(invFisher, "try-error")) {
     strMess = "Fisher Matrix is singular"
     lOutOBRE = list(nvTheta = c(NA, NA), strMess = strMess, nvA = c(NA, NA),
                     matA = matrix(NA, nrow = 2, ncol = 2), nCParOBRE = nCParOBRE,
@@ -122,7 +123,7 @@ OBRE = function(nvData, strDistribution, nCParOBRE, dfParOBRE = data.frame(nEta 
                                   matA = matA, nvA = nvA, nK = 2)
       invM2 = try(solve(matM2), silent = TRUE)
       # check on the matrix
-      if(class(invM2) == "try-error") {
+      if(is(invM2, "try-error")) {
         strMess = "OBRE matrix M2 is singular"
         lOutOBRE = list(nvTheta = c(NA, NA), strMess = strMess, nvA = nvA,
                         matA = matA, nCParOBRE = nCParOBRE,

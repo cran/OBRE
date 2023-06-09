@@ -1,7 +1,6 @@
 #' Denominator for nvA
 #'
 #' Function computing denominator for OBRE numeric vector nvA evaluation.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

@@ -1,7 +1,6 @@
 #' Element [2, 2] of matrix Q.
 #'
 #' Function computing argument element [2, 2] of matrix Q of asymptotic covariance matrix V.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

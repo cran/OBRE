@@ -1,7 +1,6 @@
 #' First part numerator for nvA
 #'
 #' Function computing first part numerator for OBRE numeric vector nvA evaluation.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

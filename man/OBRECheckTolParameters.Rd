@@ -27,5 +27,3 @@ The function compute the relative distance from the past to the current iteratio
 respect to the relative tolerance if at the current iteration matrix A is not null. Otherwise the absolute
 error is checked. Then the vector a is checked in the same way.
 }
-\keyword{internal}
-

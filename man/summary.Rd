@@ -12,5 +12,3 @@ summary(object)
 \description{
 Generic summary method
 }
-\keyword{internal}
-

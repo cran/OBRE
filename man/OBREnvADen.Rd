@@ -24,5 +24,3 @@ OBREnvADen(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA)
 \description{
 Function computing denominator for OBRE numeric vector nvA evaluation.
 }
-\keyword{internal}
-

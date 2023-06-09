@@ -24,5 +24,3 @@ OBREMatVMatMEl11(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA)
 \description{
 Function computing element [1, 1] of matrix M, for the computation of asymptotic covariance matrix V.
 }
-\keyword{internal}
-

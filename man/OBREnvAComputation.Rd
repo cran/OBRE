@@ -4,7 +4,15 @@
 \alias{OBREnvAComputation}
 \title{OBRE vector a.}
 \usage{
-OBREnvAComputation(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA)
+OBREnvAComputation(
+  nvData,
+  nTheta1,
+  nTheta2,
+  lDensityExpr,
+  nCParOBRE,
+  matA,
+  nvA
+)
 }
 \arguments{
 \item{nvData}{The vector of data.}
@@ -27,5 +35,3 @@ The OBRE a vector.
 \description{
 The function evaluates integrals used to compute the components of OBRE a vector.
 }
-\keyword{internal}
-

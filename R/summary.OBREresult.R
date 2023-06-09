@@ -1,5 +1,5 @@
 #' Generic summary method
-#' @keywords internal
+#'
 #' @param object \dots
 #' @export
 summary <- function(object) UseMethod("summary")
@@ -14,19 +14,19 @@ summary <- function(object) UseMethod("summary")
 #' @return The summary an OBREresult obect with the estimated parameters, the OBRE tuning parameter,
 #' the proportion of data weighted and the relative efficiency with respect to MLE.
 #' @examples
-#' \donttest{# Generates the Normal distribution input for OBRE
+#' \donttest{try({# Generates the Normal distribution input for OBRE
 #' distrForOBRE <- densityExpressions(strDistribution = "normal")
 #' # Generates input data
 #' simData = c(rnorm(100, 12, 1), rnorm(10, 10, 10))
 #' # Estimates OBREresult object
 #' estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
 #' # Summary of the results
-#' summary(estOBRE)}
+#' summary(estOBRE)})}
 #'
 #' @export
 
 summary.OBREresult = function(object) {
-  if(class(object) != "OBREresult") {
+  if(!is(object, "OBREresult")) {
     return(cat("Input is not an OBREresult object"))
   }
  cat(paste(object$strMess, "\n"))

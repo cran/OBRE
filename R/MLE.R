@@ -1,9 +1,9 @@
 #' Numerical Maximum Likelihood Estimator
 #'
 #' The parameters Maximum Likelihood Estimation is obtained by numerical optimization.
-#' @keywords internal
 #'
 #' @importFrom stats optim var
+#' @importFrom methods is
 #' @param nvData The vector of the data.
 #' @param strDistribution The distribution name.
 #' @param lDensityExpr The distribution expression,
@@ -26,11 +26,11 @@ MLE = function (nvData, strDistribution, lDensityExpr) {
                         control = list(maxit = 1e+06, reltol = 10^-10), nvData = nvData,
                         lDensityExpr = lDensityExpr), silent = TRUE)
   # did not work: optimize with BFGS
-  if (class(nlminbOut) == "try-error") {
+  if (is(nlminbOut, "try-error")) {
     nlminbOut1 = try(optim(par = nvTheta, fn = NlLike, method = "BFGS",
                            control = list(maxit = 1e+06, reltol = 10^-12, ndeps = rep(10^-10, 3)),
                            nvData = nvData, lDensityExpr = lDensityExpr), silent = TRUE)
-    if (class(nlminbOut1) == "try-error") {
+    if (is(nlminbOut1, "try-error")) {
       objective = NlLike(nvTheta = nvTheta, nvData = nvData, lDensityExpr = lDensityExpr)
       message = "NM and BFGS went in error. Initial values returned"
       nlminbOut = list()
@@ -39,15 +39,15 @@ MLE = function (nvData, strDistribution, lDensityExpr) {
       nlminbOut$counts = c(-1, -1)
       nlminbOut$convergence = -1
       nlminbOut$message = message
-    } else if (class(nlminbOut1) != "try-error") {
+    } else if (!is(nlminbOut1, "try-error")) {
       nlminbOut = nlminbOut1
     }
-  } else if (class(nlminbOut) != "try-error") {
+  } else if (!is(nlminbOut, "try-error")) {
     # NM worked, refine with BFGS if possible
     nlminbOut1 = try(optim(par = nlminbOut$par, fn = NlLike, method = "BFGS",
                            control = list(maxit = 1e+06, reltol = 10^-12, ndeps = rep(10^-10, 3)),
                            nvData = nvData, lDensityExpr = lDensityExpr), silent = TRUE)
-    if (class(nlminbOut1) != "try-error") {
+    if (!is(nlminbOut1, "try-error")) {
       nlminbOut = nlminbOut1
     }
   }

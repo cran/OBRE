@@ -1,7 +1,6 @@
 #' Argument C for OBRE matrix M integrals.
 #'
 #' Function computing argument C for OBRE matrix M integrals.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

@@ -18,10 +18,10 @@ The function computes matrices M (Jacobian) and Q (Variability) and
 uses them to evaluate the covariance matrix V.
 }
 \examples{
-\donttest{distrForOBRE <- densityExpressions(strDistribution = "normal")
+\donttest{try({distrForOBRE <- densityExpressions(strDistribution = "normal")
 simData = c(rnorm(1000, 12, 2),200,150)
 estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
-lOBRECov = OBRECovarianceMatrix(estOBRE)}
+lOBRECov = OBRECovarianceMatrix(estOBRE)})}
 
 }
 \references{
@@ -29,4 +29,3 @@ Hampel, F., Ronchetti, E., Rousseeuw, P. & Stahel, W. (1985). Robust Statistics.
 
 Heritier S, Cantoni E, Copt S, Victoria-Feser M (2011). Robust Methods in Biostatistics. John Wiley and Sons Ltd., Chichester, UK.
 }
-

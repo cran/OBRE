@@ -1,7 +1,6 @@
 #' Negative Log-Likelihood
 #'
 #' The function compute the Negative Log-Likelihood value that has to be used for optimization in MLE function.
-#' @keywords internal
 #'
 #' @param nvTheta Parameters of the distribution.
 #' @param nvData The vector of the data.

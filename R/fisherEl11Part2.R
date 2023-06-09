@@ -2,7 +2,6 @@
 #'
 #' Function computing part 2 of element [1, 1] for Fisher Information matrix computation. The Fisher Information matrix is
 #' splitted in the four elements ([1, 1], [1, 2], [2, 1], [2, 2]). Each element is split in part 1 and part 2
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

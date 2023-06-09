@@ -30,5 +30,3 @@ build the score matrix. The score matrix is then modified using OBRE parameters 
 an euclidean norm is derived. The weights are finally found as the minimum between the normalized nCParOBRE
 and 1.
 }
-\keyword{internal}
-

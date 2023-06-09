@@ -19,5 +19,3 @@ fisherEl22Part1(nvData, nTheta1, nTheta2, lDensityExpr)
 Function computing part 1 of element [2, 2] for Fisher Information matrix computation. The Fisher Information matrix is
 splitted in the four elements ([1, 1], [1, 2], [2, 1], [2, 2]). Each element is split in part 1 and part 2
 }
-\keyword{internal}
-

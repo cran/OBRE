@@ -4,8 +4,16 @@
 \alias{OBREmatMArgumentB}
 \title{Argument B for OBRE matrix M integrals.}
 \usage{
-OBREmatMArgumentB(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA,
-  nK)
+OBREmatMArgumentB(
+  nvData,
+  nTheta1,
+  nTheta2,
+  lDensityExpr,
+  nCParOBRE,
+  matA,
+  nvA,
+  nK
+)
 }
 \arguments{
 \item{nvData}{The vector of data.}
@@ -27,5 +35,3 @@ OBREmatMArgumentB(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA,
 \description{
 Function computing argument B for OBRE matrix M integrals.
 }
-\keyword{internal}
-

@@ -24,5 +24,3 @@ The first component of the score function.
 The function evaluates the formula used to compute the first component of the score function. The
 missing elements are imputed with 0.
 }
-\keyword{internal}
-

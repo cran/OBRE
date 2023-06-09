@@ -24,5 +24,3 @@ OBREMatVMatQEl11(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA, nvA)
 \description{
 Function computing argument element [1, 1] of matrix Q of asymptotic covariance matrix V.
 }
-\keyword{internal}
-

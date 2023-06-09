@@ -18,14 +18,13 @@ The function shows the estimated parameters, the OBRE tuning parameter,
 the proportion of data weighted and the relative efficiency with respect to MLE of an OBREresult object.
 }
 \examples{
-\donttest{# Generates the Normal distribution input for OBRE
+\donttest{try({# Generates the Normal distribution input for OBRE
 distrForOBRE <- densityExpressions(strDistribution = "normal")
 # Generates input data
 simData = c(rnorm(100, 12, 1), rnorm(10, 10, 10))
 # Estimates OBREresult object
 estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
 # Summary of the results
-summary(estOBRE)}
+summary(estOBRE)})}
 
 }
-

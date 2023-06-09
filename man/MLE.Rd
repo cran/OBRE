@@ -21,5 +21,3 @@ the algorithm.
 \description{
 The parameters Maximum Likelihood Estimation is obtained by numerical optimization.
 }
-\keyword{internal}
-

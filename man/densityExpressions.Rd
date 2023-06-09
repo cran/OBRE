@@ -29,4 +29,3 @@ eDensityFun = expression((exp( -((nvData - nTheta1)^2) / (2 * nTheta2^2)) /
 (sqrt(2 * pi) * nTheta2))))
 
 }
-

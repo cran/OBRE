@@ -4,8 +4,16 @@
 \alias{OBREMatMComputation}
 \title{Function computing the OBRE matrix M.}
 \usage{
-OBREMatMComputation(nvData, nTheta1, nTheta2, lDensityExpr, nCParOBRE, matA,
-  nvA, nK)
+OBREMatMComputation(
+  nvData,
+  nTheta1,
+  nTheta2,
+  lDensityExpr,
+  nCParOBRE,
+  matA,
+  nvA,
+  nK
+)
 }
 \arguments{
 \item{nvData}{The vector of data.}
@@ -31,5 +39,3 @@ OBRE M matrix (M_1 if nK = 1; M_2 if nK = 2).
 The function evaluates integrals used to compute the M_1 and M_2 OBRE matrices. Element (1,1) uses
 argument (A,B,F); element (1,2) uses argument (B,D,E,F); elements (2,2) uses arguments (C,D,F).
 }
-\keyword{internal}
-

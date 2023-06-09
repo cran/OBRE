@@ -4,10 +4,16 @@
 \alias{OBRE}
 \title{Optimal B-Robust Estimator}
 \usage{
-OBRE(nvData, strDistribution, nCParOBRE, dfParOBRE = data.frame(nEta = 1e-06,
-  nMaxIterLoopWc = 10, nMaxIterLoopA = 10, nRelTol = 0.001, nAbsTol = 0.5,
-  stringsAsFactors = FALSE), nTheta1Init = NA, nTheta2Init = NA,
-  eDensityFun = NA)
+OBRE(
+  nvData,
+  strDistribution,
+  nCParOBRE,
+  dfParOBRE = data.frame(nEta = 1e-06, nMaxIterLoopWc = 10, nMaxIterLoopA = 10, nRelTol =
+    0.001, nAbsTol = 0.5, stringsAsFactors = FALSE),
+  nTheta1Init = NA,
+  nTheta2Init = NA,
+  eDensityFun = NA
+)
 }
 \arguments{
 \item{nvData}{The vector of data.}
@@ -43,7 +49,7 @@ two parameters distribution.
 # Using the densityExpressions function for initialize the distribution
 distrForOBRE <- densityExpressions(strDistribution = "normal")
 simData = c(rnorm(1000, 12, 2),200,150)
-\donttest{estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
+\donttest{try({estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
 # Launching the generation of the density expression directly from OBRE
 simData = c(rnorm(1000, 12, 2),200,150)
 estOBRE <- OBRE(nvData = simData, strDistribution = "normal", nCParOBRE = 3)
@@ -51,7 +57,7 @@ estOBRE <- OBRE(nvData = simData, strDistribution = "normal", nCParOBRE = 3)
 simData = c(rnorm(1000, 12, 2),200,150)
 estOBRE <- OBRE(nvData = simData, strDistribution = "custom", nCParOBRE = 3,
 eDensityFun = expression((exp( -((nvData - nTheta1)^2) / (2 * nTheta2^2)) /
-(sqrt(2 * pi) * nTheta2))))}
+(sqrt(2 * pi) * nTheta2))))})}
 
 }
 \references{
@@ -63,4 +69,3 @@ Hampel, F., Ronchetti, E., Rousseeuw, P. & Stahel, W. (1985). Robust Statistics.
 
 Victoria-Feser, M.P. & Ronchetti, E. (1994). Robust methods for personal-income distribution models. Canadian Journal of Statistics 22, 247-258.
 }
-

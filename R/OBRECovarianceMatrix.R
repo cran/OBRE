@@ -4,6 +4,7 @@
 #' uses them to evaluate the covariance matrix V.
 #'
 #' @import pracma
+#' @importFrom methods is
 #' @param lOBRE List of all the variables resulting from the OBRE computation.
 #'
 #' @export
@@ -11,10 +12,10 @@
 #' matrices, as well as the relative efficiency with respect to Maximum Likelihood Estimator
 #'
 #' @examples
-#' \donttest{distrForOBRE <- densityExpressions(strDistribution = "normal")
+#' \donttest{try({distrForOBRE <- densityExpressions(strDistribution = "normal")
 #' simData = c(rnorm(1000, 12, 2),200,150)
 #' estOBRE <- OBRE(nvData = simData, strDistribution = distrForOBRE, nCParOBRE = 3)
-#' lOBRECov = OBRECovarianceMatrix(estOBRE)}
+#' lOBRECov = OBRECovarianceMatrix(estOBRE)})}
 #'
 #' @references Hampel, F., Ronchetti, E., Rousseeuw, P. & Stahel, W. (1985). Robust Statistics. The approach based on influence function. John Wiley and Sons Ltd., Chichester, UK.
 #' @references Heritier S, Cantoni E, Copt S, Victoria-Feser M (2011). Robust Methods in Biostatistics. John Wiley and Sons Ltd., Chichester, UK.
@@ -65,7 +66,7 @@ OBRECovarianceMatrix = function(lOBRE) {
   matFisherOBRE = try(matFisherComputation(nTheta1 = nTheta1, nTheta2 = nTheta2,
                                            lDensityExpr = lDensityExpr), silent = TRUE)
   invFisherOBRE = try(solve(matFisherOBRE), silent = TRUE)
-  if(class(invFisherOBRE) == "try-error") {
+  if(is(invFisherOBRE, "try-error")) {
     nReiOBRE = NA
   } else {
     nArgumentREIOBRE = det(invFisherOBRE) / det(matAsymptCovariance)

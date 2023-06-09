@@ -4,7 +4,6 @@
 #' build the score matrix. The score matrix is then modified using OBRE parameters A matrix and a vector and
 #' an euclidean norm is derived. The weights are finally found as the minimum between the normalized nCParOBRE
 #' and 1.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

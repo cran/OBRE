@@ -2,7 +2,6 @@
 #'
 #' The function evaluates integrals used to compute the M_1 and M_2 OBRE matrices. Element (1,1) uses
 #' argument (A,B,F); element (1,2) uses argument (B,D,E,F); elements (2,2) uses arguments (C,D,F).
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

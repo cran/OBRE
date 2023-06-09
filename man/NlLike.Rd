@@ -19,5 +19,3 @@ Negative log likelihood value.
 \description{
 The function compute the Negative Log-Likelihood value that has to be used for optimization in MLE function.
 }
-\keyword{internal}
-

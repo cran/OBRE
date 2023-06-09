@@ -2,7 +2,6 @@
 #'
 #' The function evaluates the formula used to compute the first component of the score function. The
 #' missing elements are imputed with 0.
-#' @keywords internal
 #'
 #' @param nvData The vector of data.
 #' @param nTheta1 The first parameter.

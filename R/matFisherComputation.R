@@ -1,7 +1,6 @@
 #' Fisher information matrix
 #'
 #' Function calculating the Fisher information matrix.
-#' @keywords internal
 #'
 #' @param nTheta1 First parameter.
 #' @param nTheta2 Second parameter.
